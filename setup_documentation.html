@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Setup Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bot Setup Guide</h1>
+
+    <h2>Introduction</h2>
+    <p>This guide will help you set up and use the bot. Follow the steps below to get started.</p>
+
+    <h2>What You Need</h2>
+    <ul>
+        <li>A computer with Python installed.</li>
+        <li>A Discord account.</li>
+        <li>A bot token from Discord (we'll explain how to get this).</li>
+    </ul>
+
+    <h2>Step 1: Get Your Bot Token</h2>
+    <ol>
+        <li>Go to the <a href="https://discord.com/developers/applications" target="_blank">Discord Developer
+                Portal</a>.</li>
+        <li>Create a new application and add a bot to it.</li>
+        <li>Copy the bot token. This is like a password for your bot.</li>
+    </ol>
+
+    <h2>Step 2: Set Up the Bot</h2>
+    <ol>
+        <li>Download the bot files and place them in a folder on your computer.</li>
+        <li>Create a file named <code>.env</code> in the same folder.</li>
+        <li>Open the <code>.env</code> file and add the following lines:</li>
+        <pre>
+DISCORD_BOT_TOKEN=your_bot_token
+DISCORD_CHANNEL_TOPIC_ID_TO_SEND_CODE=channel_id_for_code
+DISCORD_CHANNEL_ADMIN_TOPIC_ID=channel_id_for_admin
+        </pre>
+        <li>Replace <code>your_bot_token</code> with the token you copied earlier.</li>
+        <li>Replace <code>channel_id_for_code</code> and <code>channel_id_for_admin</code> with the IDs of the Discord
+            channels you want to use.</li>
+    </ol>
+
+    <h2>Step 3: Run the Bot</h2>
+    <ol>
+        <li>Open a terminal or command prompt.</li>
+        <li>Go to the folder where you saved the bot files.</li>
+        <li>Type the following command and press Enter:</li>
+        <pre>
+python main.py
+        </pre>
+    </ol>
+
+    <h2>Step 4: Use the Bot</h2>
+    <p>Once the bot is running, you can use it in your Discord server. Here are some commands you can try:</p>
+    <ul>
+        <li><code>!setcookie value expires</code>: Set a cookie for the bot to use. <br><strong>Example:</strong>
+            <code>!setcookie abc123 1712123456</code></li>
+        <li><code>!resetcookie</code>: Clear the current cookie. <br><strong>Example:</strong> <code>!resetcookie</code>
+        </li>
+        <li><code>!status</code>: Check if the bot is working. <br><strong>Example:</strong> <code>!status</code></li>
+    </ul>
+
+    <h2>Need Help?</h2>
+    <p>If you have any questions or run into issues, contact the person who provided you with the bot files.</p>
+</body>
+
+</html>
