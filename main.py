@@ -118,7 +118,7 @@ async def browser_automation():
                 continue
 
             if browser is None:
-                browser = await p.chromium.launch(headless=False)
+                browser = await p.chromium.launch()
             if page is None:
                 page = await browser.new_page()
             try:
