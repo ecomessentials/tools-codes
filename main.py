@@ -155,7 +155,7 @@ async def browser_automation():
                 await page.wait_for_load_state("networkidle")
                 await page.click('button[onclick="closeCodeModal()"]')
                 await page.wait_for_load_state("networkidle")
-                await page.wait_for_timeout(30000)
+                await page.wait_for_timeout(514_000)
                 await page.reload()
             except Exception as e:
                 error_msg = f"Error in web scraping process: {str(e)}"
