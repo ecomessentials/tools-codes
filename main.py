@@ -2,6 +2,8 @@ import asyncio
 import os
 import discord
 from playwright.async_api import async_playwright
+import pytz
+from datetime import datetime
 
 # Discord configuration
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
@@ -111,6 +113,17 @@ async def browser_automation():
     global browser, page, code, cookie_value, cookie_expires
     async with async_playwright() as p:
         while True:
+            # Get the current time in Germany timezone
+            germany_tz = pytz.timezone('Europe/Berlin')
+            current_time = datetime.now(germany_tz)
+            current_hour = current_time.hour
+
+            # Check if the current time is between 12 PM and 10 PM
+            if current_hour < 12 or current_hour >= 22:
+                print("Outside of allowed time range (12 PM to 10 PM Germany time). Waiting...")
+                await asyncio.sleep(60)  # Wait 1 minute before checking again
+                continue
+
             # Check if cookie values are set
             if not cookie_value or not cookie_expires:
                 await send_admin_message("Cookie values not set. Waiting for admin to set values...")
