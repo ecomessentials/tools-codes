@@ -139,11 +139,11 @@ async def browser_automation():
             return "Outside of allowed time range (12 PM to 10 PM Germany time)."
 
         # Check if cookie values are set
-        if not cookie_value or not cookie_expires:
+        if not cookie_value :
             return "Error Code 5151"
 
         if browser is None:
-            browser = await p.chromium.launch()
+            browser = await p.chromium.launch(headless=False)
         if page is None:
             page = await browser.new_page()
         try:
