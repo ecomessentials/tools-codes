@@ -139,7 +139,7 @@ async def browser_automation():
             return "Outside of allowed time range (12 PM to 10 PM Germany time)."
 
         # Check if cookie values are set
-        if not cookie_value :
+        if not cookie_value:
             return "Error Code 5151"
 
         if browser is None:
@@ -177,6 +177,10 @@ async def browser_automation():
             await page.wait_for_load_state("networkidle")
             await page.click('button[onclick="closeCodeModal()"]')
             await page.wait_for_load_state("networkidle")
+            await page.close()
+            await browser.close()
+            browser = None
+            page = None
             return f"OTP Code: {code}"
         except Exception as e:
             error_msg = f"Error in web scraping process: {str(e)}"
