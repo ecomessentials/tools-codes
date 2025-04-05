@@ -153,8 +153,8 @@ async def browser_automation():
                 'value': cookie_value,
                 'domain': 'toolsuite.pro',
                 'path': '/',
-                'secure': True,
-                'expires': cookie_expires
+                'secure': True
+                # 'expires': cookie_expires
             }])
 
             await page.goto("https://toolsuite.pro/creds/autologin.php")
