@@ -143,7 +143,7 @@ async def browser_automation():
             return "Error Code 5151"
 
         if browser is None:
-            browser = await p.chromium.launch(headless=False)
+            browser = await p.chromium.launch()
         if page is None:
             page = await browser.new_page()
         try:
