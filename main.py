@@ -85,9 +85,9 @@ async def on_message(message: discord.Message):
         current_hour = current_time.hour
 
         # Check if the current time is between 12 PM and 11  PM
-        if current_hour < 12 or current_hour >= 23:
-            await message.channel.send("Outside of allowed time range (12 PM to 11 PM Germany time).")
-            return
+        # if current_hour < 12 or current_hour >= 23:
+        #     await message.channel.send("Outside of allowed time range (12 PM to 11 PM Germany time).")
+        #     return
         await message.channel.send("Getting OTP...")
         result = await browser_automation()
         # Send the result to the configured channel for sending code
