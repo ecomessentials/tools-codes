@@ -28,7 +28,7 @@ client = discord.Client(intents=intents)
 # Browser automation variables
 browser = None
 page = None
-code = 0
+code = None
 cookie_value = None
 cookie_expires = None
 
@@ -153,8 +153,8 @@ async def browser_automation():
                 'value': cookie_value,
                 'domain': 'toolsuite.pro',
                 'path': '/',
-                'secure': True
-                # 'expires': cookie_expires
+                'secure': True,
+                'expires': cookie_expires
             }])
 
             await page.goto("https://toolsuite.pro/creds/autologin.php")
