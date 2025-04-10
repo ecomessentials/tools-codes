@@ -134,9 +134,9 @@ async def browser_automation():
         current_time = datetime.now(germany_tz)
         current_hour = current_time.hour
 
-        # Check if the current time is between 12 PM and 10 PM
-        if current_hour < 12 or current_hour >= 22:
-            return "Outside of allowed time range (12 PM to 10 PM Germany time)."
+        # # Check if the current time is between 12 PM and 10 PM
+        # if current_hour < 12 or current_hour >= 22:
+        #     return "Outside of allowed time range (12 PM to 10 PM Germany time)."
 
         # Check if cookie values are set
         if not cookie_value:
